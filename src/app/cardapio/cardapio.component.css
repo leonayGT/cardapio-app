@@ -1,0 +1,34 @@
+
+.title{
+color: #ff7aa7;
+}
+
+h2, h5, h4{
+    color: white;
+}
+
+.cabecalho {
+    background-color: #3f51b5;
+    padding: 15px;
+}
+
+.th{
+    width: 30%;
+}
+
+.text-white {
+    font-weight: 600;
+}
+
+.container{
+    border:  black;
+}
+
+.table tr:hover{
+    user-select: none;
+    cursor: pointer;
+}
+
+.badge {
+
+}

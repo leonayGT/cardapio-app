@@ -1,0 +1,179 @@
+<body>
+  <div class="cabecalho" >
+    <div class="row m-2">
+       <h2 >Cardapio</h2>
+       <div>
+       <button type="button" class="btn btn-primary d-flex align-itens-center bg-danger" >
+        <span class="material-icons text-white">
+          shopping_bag
+           </span>
+          <span class=" bg-pink" >{{qtdItemSacola}}</span>
+      </button>
+      <p>{{totalSacola | currency :"BRL"}}</p>
+    </div>
+      
+    </div>
+ </div>
+    <div class="container">
+       
+         <div class="row d-flex align-itens-center justify-content-center" >
+            <table class="table table-borderless table-hover">
+                <thead style="color:#ff7aa7">
+                  <tr><th class="title">Sanduiche de Boi</th><th>Preço</th></tr>
+                </thead>
+                <tbody class="">           
+                  <tr *ngFor="let sanduiche of sanduichesBoi" (click)="precoPacote(sanduiche)"> 
+                    <th scope="row" style="width: 80%;">{{sanduiche.descricao}}</th>
+                    <td><td>{{qtdItem(sanduiche.descricao)}}x {{sanduiche.preco | currency :'BRL'}}</td>
+                    <button *ngIf=" qtdItem(sanduiche.descricao) > 0" class="btn-close" (click)="removerItem(sanduiche.produto)"></button>       
+                  </tr>        
+                </tbody>
+              </table>            
+          </div>
+          
+          <div class="row d-flex align-itens-center" >
+            <table class="table table-borderless table-hover" >
+                <thead style="color:#ff7aa7">
+                  <tr><th class="title">Sanduiche de Frango</th><th>Preço</th></tr>
+                </thead>
+                <tbody class="">           
+                  <tr *ngFor="let sanduiche of sanduichesFrango" (click)="precoPacote(sanduiche)">
+                    <th scope="row" style="width: 80%;">{{sanduiche.descricao}}</th>
+                    <td><td>{{qtdItem(sanduiche.descricao)}}x {{sanduiche.preco | currency :'BRL'}}</td>
+                    <button *ngIf="qtdItem(sanduiche.descricao) > 0" class="btn-close"></button>        
+                  </tr>        
+                </tbody>
+              </table>            
+          </div>
+          <div class="row d-flex align-itens-center" >
+            <table class="table table-borderless table-hover" >
+                <thead style="color:#ff7aa7">
+                  <tr><th class="title">Sanduiche Diversos</th><th>Preço</th></tr>
+                </thead>
+                <tbody class="">           
+                  <tr *ngFor="let sanduiche of sanduichesDiversos" (click)="precoPacote(sanduiche)">
+                    <th scope="row" style="width: 80%;">{{sanduiche.descricao}}</th>
+                    <td><td>{{qtdItem(sanduiche.descricao)}}x {{sanduiche.preco | currency :'BRL'}}</td>
+                    <button *ngIf="qtdItem(sanduiche.descricao) > 0" class="btn-close"></button>        
+                  </tr>        
+                </tbody>
+              </table>            
+          </div>
+          <div class="row d-flex align-itens-center" >
+            <table class="table table-borderless table-hover" >
+                <thead style="color:#ff7aa7">
+                  <tr><th class="title">Sanduiches Especiais</th><th>Preço</th></tr>
+                </thead>
+                <tbody class="">           
+                  <tr *ngFor="let sanduiche of sanduichesEspeciais" (click)="precoPacote(sanduiche)">
+                    <th scope="row" style="width: 80%;">{{sanduiche.descricao}}</th>
+                    <td><td>{{qtdItem(sanduiche.descricao)}}x {{sanduiche.preco | currency :'BRL'}}</td>
+                    <button *ngIf="qtdItem(sanduiche.descricao) > 0" class="btn-close"></button>        
+                  </tr>        
+                </tbody>
+              </table>            
+          </div>
+          <div class="row d-flex align-itens-center" >
+            <table class="table table-borderless table-hover" >
+                <thead style="color:#ff7aa7">
+                  <tr><th class="title">Pizzas</th><th>Preço</th></tr>
+                </thead>
+                <tbody class="">           
+                  <tr *ngFor="let sanduiche of pizzas" (click)="precoPacote(sanduiche)">
+                    <th scope="row" style="width: 80%;">{{sanduiche.descricao}}</th>
+                    <td><td>{{qtdItem(sanduiche.descricao)}}x {{sanduiche.preco | currency :'BRL'}}</td>
+                    <button *ngIf="qtdItem(sanduiche.descricao) > 0" class="btn-close"></button>        
+                  </tr>        
+                </tbody>
+              </table>            
+          </div>
+          <div class="row d-flex align-itens-center" >
+            <table class="table table-borderless table-hover" >
+                <thead style="color:#ff7aa7">
+                  <tr><th class="title">Lasanha</th><th>Preço</th></tr>
+                </thead>
+                <tbody class="">           
+                  <tr *ngFor="let sanduiche of lasanha" (click)="precoPacote(sanduiche)">
+                    <th scope="row" style="width: 80%;">{{sanduiche.descricao}}</th>
+                    <td><td>{{qtdItem(sanduiche.descricao)}}x {{sanduiche.preco | currency :'BRL'}}</td>
+                    <button *ngIf="qtdItem(sanduiche.descricao) > 0" class="btn-close"></button>        
+                  </tr>        
+                </tbody>
+              </table>            
+          </div>
+          <div class="row d-flex align-itens-center" >
+            <table class="table table-borderless table-hover" >
+                <thead style="color:#ff7aa7">
+                  <tr><th class="title">Macarrão na Chapa</th><th>Preço</th></tr>
+                </thead>
+                <tbody class="">           
+                  <tr *ngFor="let sanduiche of macarraoChapa" (click)="precoPacote(sanduiche)">
+                    <th scope="row" style="width: 80%;">{{sanduiche.descricao}}</th>
+                    <td><td>{{qtdItem(sanduiche.descricao)}}x {{sanduiche.preco | currency :'BRL'}}</td>
+                    <button *ngIf="qtdItem(sanduiche.descricao) > 0" class="btn-close"></button>        
+                  </tr>        
+                </tbody>
+              </table>            
+          </div>
+          <div class="row d-flex align-itens-center" >
+            <table class="table table-borderless table-hover" >
+                <thead style="color:#ff7aa7">
+                  <tr><th class="title">Porções</th>
+                </thead>
+                <tbody class="">           
+                  <tr *ngFor="let sanduiche of porcao" (click)="precoPacote(sanduiche)">
+                    <th scope="row" style="width: 80%;">{{sanduiche.descricao}}</th>
+                    <td><td>{{qtdItem(sanduiche.descricao)}}x {{sanduiche.preco | currency :'BRL'}}</td>
+                    <button *ngIf="qtdItem(sanduiche.descricao) > 0" class="btn-close"></button>        
+                  </tr>        
+                </tbody>
+              </table>            
+          </div>
+          <div class="row d-flex align-itens-center" >
+            <table class="table table-borderless table-hover" >
+                <thead style="color:#ff7aa7">
+                  <tr><th class="title">Creme de Açai</th>
+                </thead>
+                <tbody class="">           
+                  <tr *ngFor="let sanduiche of cremeAcai" (click)="precoPacote(sanduiche)">
+                    <th scope="row" style="width: 80%;">{{sanduiche.descricao}}</th>
+                    <td><td>{{qtdItem(sanduiche.descricao)}}x {{sanduiche.preco | currency :'BRL'}}</td>
+                    <button *ngIf="qtdItem(sanduiche.descricao) > 0" class="btn-close"></button>        
+                  </tr>        
+                </tbody>
+              </table>            
+          </div>
+          <div class="row d-flex align-itens-center" >
+            <table class="table table-borderless table-hover" >
+                <thead style="color:#ff7aa7">
+                  <tr><th class="title">Sucos</th>
+                </thead>
+                <tbody class="">           
+                  <tr *ngFor="let sanduiche of sucos" (click)="precoPacote(sanduiche)">
+                    <th scope="row" style="width: 80%;">{{sanduiche.descricao}}</th>
+                    <td><td>{{qtdItem(sanduiche.descricao)}}x {{sanduiche.preco | currency :'BRL'}}</td>
+                    <button *ngIf="qtdItem(sanduiche.descricao) > 0" class="btn-close"></button>        
+                  </tr>        
+                </tbody>
+              </table>            
+          </div>
+          <div class="row d-flex align-itens-center" >
+            <table class="table table-borderless table-hover" >
+                <thead style="color:#ff7aa7">
+                  <tr><th class="title">Bebidas Diversas</th>
+                </thead>
+                <tbody class="">           
+                  <tr *ngFor="let sanduiche of bebidas" (click)="precoPacote(sanduiche)">
+                    <th scope="row" style="width: 80%;">{{sanduiche.descricao}}</th>
+                    <td><td>{{qtdItem(sanduiche.descricao)}}x {{sanduiche.preco | currency :'BRL'}}</td>
+                    <button *ngIf="qtdItem(sanduiche.descricao) > 0" class="btn-close"></button>        
+                  </tr>        
+                </tbody>
+              </table>            
+          </div>      
+  </div>
+
+<pre  *ngFor=" let saco of sacola">
+  Porções
+  {{saco.produto}}</pre>
+</body>
